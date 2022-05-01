@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>Create Prescription</h1>
+<div class="form-group">
+    <form method="post">
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
+
+<script>
+    var p_name = "{{patient_name}}";
+    document.getElementById("patient").value = p_name ;
+
+    var d_name = "{{user.doctor.id}}";
+    document.getElementById("doctor").value = d_name ;
+    
+    var c_name = '{{consult_id}}';
+    document.getElementById("consult_id").value = c_name ;
+
+</script>
+
+{% endblock %}

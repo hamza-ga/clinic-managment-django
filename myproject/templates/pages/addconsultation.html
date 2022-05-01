@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>consultation</h1>
+<div class="form-group">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{form.as_p}}
+        {{form.media}}
+
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+</div>
+
+
+<script>
+    var p_name = "{{user.patient.id}}";
+    document.getElementById("patient").value = p_name ;
+
+    var d_name = "{{pk}}";
+    document.getElementById("doctor").value = d_name ;
+    
+    var c_name = '{{c_pk}}';
+    document.getElementById("category").value = c_name ;
+
+</script>
+
+{% endblock %}
+

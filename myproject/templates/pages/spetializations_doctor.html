@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block content %}
+
+
+    <h1>{{spcilizname}}</h1>
+    <br/>
+        {% for one in dok_info %}
+            {{one.username}}
+            {{one.first_name}}
+            {{one.last_name}}
+            {{one.spcialty}}
+            <br/>
+            <a class="btn btn-primary" href="{% url 'addconsultation' one.pk %}">consultation</a>
+            <a class="btn btn-primary" href="#">chat</a>
+            <br/>
+        {% endfor %} 
+
+
+
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% for element in object_list %}
+
+    {% if element.patient_name.pk == user.patient.pk %}
+        <hr>
+        <a href="{% url 'show-prescription' element.pk %}">{{element.doctor_name}}</a>
+        <hr>
+    {% endif %}
+ 
+
+{% endfor %}
+{% endblock %}
+

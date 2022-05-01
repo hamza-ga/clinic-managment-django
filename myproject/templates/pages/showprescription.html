@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>روشته</h1>
+{% if prescription.patient_name.pk == user.patient.pk %}
+    {{prescription.patient_name}}
+    <br/>
+    {{prescription.doctor_name}}
+    <br/>
+    {{prescription.body}}
+    <br/>
+    {{prescription.date}}
+{% endif %}
+
+{% endblock %}
